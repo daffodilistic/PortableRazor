@@ -129,8 +129,9 @@ namespace PortableRazor.Web
 					namePos = valueEnd + 1;
 				}
 				value = System.Net.WebUtility.UrlDecode (decoded.Substring (valuePos, valueEnd - valuePos));
-
-				result.Add (name, value);
+				
+				if (name != null)
+					result.Add (name, value);
 				if (namePos == -1)
 					break;
 			}
